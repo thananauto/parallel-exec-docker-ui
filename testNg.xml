@@ -11,7 +11,7 @@
     </classes>
   </test> <!-- Test -->
   <test  name="Test from edge browser" preserve-order="true">
-    <parameter name="browser" value="edge"/>
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.ui.testng.test.UiTest"/>
     </classes>

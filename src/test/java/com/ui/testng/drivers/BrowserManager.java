@@ -29,7 +29,7 @@ public class BrowserManager {
              capabilities = new DesiredCapabilities();
            // capabilities.setCapability("browserName", "chrome");
             capabilities.setBrowserName("chrome");
-          // capabilities.setVersion("112.0");
+           capabilities.setVersion("112.0");
 
         }else if(browserName.equalsIgnoreCase("firefox")){
            // WebDriverManager.firefoxdriver().setup();
