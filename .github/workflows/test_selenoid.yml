@@ -31,6 +31,9 @@ jobs:
       uses: satackey/action-docker-layer-caching@v0.0.11
       continue-on-error: true
 
+    - name: copy browsers.json
+      run: mkdir -p /etc/selenoid && cp -R browsers.json /etc/selenoid
+
     - name: download the chrome image
       run: docker pull selenoid/chrome:112.0
 
@@ -53,6 +56,6 @@ jobs:
 
     - name: Stop containers
       if: always()
-      run: docker-compose -f "docker-compose_old.yml" down
+      run: docker-compose -f "docker-compose.yml" down
 
    
