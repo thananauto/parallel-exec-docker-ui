@@ -37,9 +37,11 @@ jobs:
     - name: start containers
       run: docker-compose -f "docker-compose.yml" up -d --build
 
+    - name: check the container status
+      run: curl -v http://selenoid:4444/status
 
     - name: check the container status - default
-      run: curl http://localhost:4444/status
+      run: curl -v http://localhost:4444/status
 
     - name: Build with Maven
       run: mvn -B test --file pom.xml
