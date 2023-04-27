@@ -39,7 +39,7 @@ jobs:
 
 
     - name: check the container status - default
-      run: docker network inspect selenoid
+      run: curl -v http://localhost:4444/status
 
 
     - name: Build with Maven
