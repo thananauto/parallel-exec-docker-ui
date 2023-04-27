@@ -1,6 +1,8 @@
-name: Parallel execution
+name: Parallel execution - selenoid
 
 on:
+  push:
+    - setup
   workflow_dispatch:
 
 jobs:
