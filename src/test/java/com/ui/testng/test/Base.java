@@ -19,7 +19,7 @@ public class Base {
 
     @Parameters("browser")
     @BeforeMethod
-    public void setUp(@Optional("firefox") String browser) throws MalformedURLException {
+    public void setUp(@Optional("chrome") String browser) throws MalformedURLException {
         config = ConfigFileFactory.config;
         WebDriver driver = BrowserManager.doBrowserSetup(browser);
         //set driver
