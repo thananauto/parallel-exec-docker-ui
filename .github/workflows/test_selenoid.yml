@@ -37,8 +37,6 @@ jobs:
     - name: start containers
       run: docker-compose -f "docker-compose.yml" up -d --build
 
-    - name: check the container status
-      run: curl http://selenoid:4444/status
 
     - name: check the container status - default
       run: curl http://localhost:4444/status
