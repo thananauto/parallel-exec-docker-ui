@@ -39,7 +39,8 @@ jobs:
 
 
     - name: check the container status - default
-      run: curl -v http://localhost:4444/status
+      run: docker network inspect selenoid
+
 
     - name: Build with Maven
       run: mvn -B test --file pom.xml

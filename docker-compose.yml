@@ -2,6 +2,7 @@ version: '3'
 services:
   selenoid:
     network_mode: bridge
+    container_name: selenoid
     image: aerokube/selenoid:latest-release
     volumes:
       - "/etc/selenoid:/etc/selenoid"
