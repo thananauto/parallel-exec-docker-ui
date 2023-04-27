@@ -1,6 +1,6 @@
 {
   "chrome": {
-    "default": "102",
+    "default": "111.0",
     "versions": {
       "111.0": {
         "port": "4444",
