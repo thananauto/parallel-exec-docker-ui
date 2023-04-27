@@ -1,0 +1,15 @@
+version: 3.5
+networks:
+  selenoid:
+
+services:
+  ui-tests:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    environment:
+      StartRemote: "yes"
+    command: mvn clean test
+    container_name: ui_tests
+    ports:
+      - 0.0.0.0:5555:5555
