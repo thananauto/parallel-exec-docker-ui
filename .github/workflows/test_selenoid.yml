@@ -35,14 +35,14 @@ jobs:
       run: sudo mkdir -p /etc/selenoid && sudo cp -R browsers.json /etc/selenoid/.
 
     - name: download the chrome image
-      run: docker pull selenoid/chrome:112.0
+      run: sudo docker pull selenoid/chrome:112.0
 
     - name: start containers
       run: docker-compose -f "docker-compose.yml" up -d --build
 
 
     - name: check the container status - default
-      run: curl -v http://localhost:4444/status
+      run: curl -s http://localhost:4444/status
 
 
     - name: Build with Maven
