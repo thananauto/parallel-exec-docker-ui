@@ -22,12 +22,14 @@ services:
     container_name: selenoid_ui
     image: aerokube/selenoid-ui:latest
     links:
-      - selenoid-net
+      - selenoid
     depends_on:
       - selenoid
     ports:
       - "8083:8080"
     command: [ "--selenoid-uri", "http://selenoid:4444" ]
+    networks:
+      - selenoid-net
 
 networks:
   selenoid-net:
