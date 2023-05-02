@@ -5,7 +5,7 @@ networks:
 services:
   ui-tests:
     build:
-      context: ./
+      context: .
       dockerfile: ./Dockerfile
     environment:
       StartRemote: "yes"
