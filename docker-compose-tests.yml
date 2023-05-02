@@ -10,6 +10,6 @@ services:
     environment:
       StartRemote: "yes"
     command: mvn clean test
-    container_name: ui_tests
+    container_name: testng-selenoid-ui
     ports:
       - 0.0.0.0:5555:5555
