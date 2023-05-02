@@ -3,7 +3,7 @@ networks:
   selenoid-net:
 
 services:
-  ui-tests:
+  testng-selenoid-ui:
     build:
       context: .
       dockerfile: ./Dockerfile
