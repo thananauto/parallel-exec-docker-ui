@@ -1,6 +1,6 @@
 version: '3.5'
 networks:
-  selenoid:
+  selenoid-net:
 
 services:
   ui-tests:
@@ -13,3 +13,5 @@ services:
     container_name: testng-selenoid-ui
     ports:
       - 0.0.0.0:5555:5555
+    networks:
+      - selenoid-net
