@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 services:
   selenoid:
     container_name: selenoid
@@ -33,4 +33,5 @@ services:
 
 networks:
   selenoid-net:
+    name: sele_net
     driver: bridge
