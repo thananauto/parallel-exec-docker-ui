@@ -7,14 +7,14 @@
         "port": "4444",
         "path" : "/",
         "tmpfs": {"/tmp":"size=512m"},
-        "additionalNetworks" : ["testng-selenoid-ui_selenoid-net"]
+        "additionalNetworks" : ["sele_net"]
       },
       "112.0": {
         "image": "selenoid/chrome:112.0",
         "port": "4444",
         "path" : "/",
         "tmpfs": {"/tmp":"size=512m"},
-        "additionalNetworks" : ["testng-selenoid-ui_selenoid-net"]
+        "additionalNetworks" : ["sele_net"]
       }
     }
   }
