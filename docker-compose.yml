@@ -33,5 +33,4 @@ services:
 
 networks:
   selenoid-net:
-    name: sele_net
     driver: bridge

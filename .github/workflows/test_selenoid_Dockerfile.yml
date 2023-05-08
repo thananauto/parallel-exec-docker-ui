@@ -1,9 +1,6 @@
 name: Parallel execution - Separate container
 
 on:
-  push:
-    branches:
-      - setup
   workflow_dispatch:
 
 jobs:
