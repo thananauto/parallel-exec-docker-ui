@@ -40,7 +40,7 @@ jobs:
 
 
     - name: Build with Maven
-      run: mvn -B test --file pom.xml
+      run: mvn -B test --file pom.xml -Dgrid-url=http://localhost:4444/wd/hub
 
     - name: Save Maven cache
       uses: skjolber/maven-cache-github-action@v1
