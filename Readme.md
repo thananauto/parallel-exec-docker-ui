@@ -11,6 +11,9 @@ clone this project, this consist of sample UI script with `TestNG` as runner
 3. Selenoid  [`docker-compose.yml`](docker-compose.yml) and [`docker-compose-tests.yml`](docker-compose-tests.yml) [![Selenoid + script on container](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_selenoid_Dockerfile.yml/badge.svg)](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_selenoid_Dockerfile.yml) and [![Selenoid + Script on host](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_selenoid.yml/badge.svg)](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_selenoid.yml)
 4. Zalenium `TODO`
 
+
+For workflow execution logs and details refer `Actions` tab of repo
+
 ## Reference
 1. [Selenium Grid Docker](https://github.com/SeleniumHQ/docker-selenium/blob/trunk/README.md)
 2. [Selenium-hub](https://hub.docker.com/u/selenium)
