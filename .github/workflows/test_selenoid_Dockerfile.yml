@@ -37,7 +37,7 @@ jobs:
 
 
     - name: Kick start the test via separate container
-      run: docker-compose -f "docker-compose-tests.yml" up -d --build --remove-orphans
+      run: docker-compose -f "docker-compose-tests.yml" up -d --build
 
     - name: Stop containers
       if: always()
