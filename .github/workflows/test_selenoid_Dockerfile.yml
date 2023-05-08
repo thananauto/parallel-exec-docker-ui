@@ -27,13 +27,24 @@ jobs:
     - name: start containers
       run: docker-compose -f "docker-compose.yml" up -d --build
 
+    - name: check the container status - default
+      run: |
+        curl -s http://localhost:4444/status
+        curl -s http://localhost:4444/wd/hub
+
+    - name: check the running container
+      run: docker ps -a && docker logs selenoid
+
+
     - name: Kick start the test via separate container
-      run: docker-compose -f "docker-compose-tests.yml" up -d --build
+      run: docker-compose -f "docker-compose-tests.yml" up -d --build --remove-orphans
 
     - name: Stop containers
       if: always()
       run: |
-        docker logs selenoid
+        docker wait testng-selenoid-ui
+        docker logs testng-selenoid-ui
+        docker rm testng-selenoid-ui
         docker-compose -f "docker-compose.yml" down
         docker-compose -f "docker-compose-tests.yml" down
 

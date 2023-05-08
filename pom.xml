@@ -19,7 +19,16 @@
         <lombok-version>1.18.26</lombok-version>
         <selenium-version>4.8.0</selenium-version>
         <owner-version>1.0.12</owner-version>
+        <grid-url>http://localhost:4444/wd/hub</grid-url>
     </properties>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>

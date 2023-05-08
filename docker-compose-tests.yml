@@ -8,7 +8,7 @@ services:
       dockerfile: ./Dockerfile
     environment:
       StartRemote: "yes"
-    command: mvn clean test
+    command: mvn clean test -Dgrid-url=http://selenoid:4444/wd/hub
     container_name: testng-selenoid-ui
     ports:
       - 5555:5555
@@ -17,7 +17,7 @@ services:
 
 networks:
   app:
-    name: sele_net
     external: true
+    name: selenoid-net
 
 
