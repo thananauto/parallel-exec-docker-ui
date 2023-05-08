@@ -1,9 +1,9 @@
-name: Parallel execution - Separate container
+name: Selenoid + script on container
 
 on:
-  push:
+  pull_request:
     branches:
-      - setup
+      - main
   workflow_dispatch:
 
 jobs:

@@ -14,8 +14,7 @@ services:
       - 5555:5555
     networks:
       - app
-    links:
-      - selenoid
+
 
 networks:
   app:
