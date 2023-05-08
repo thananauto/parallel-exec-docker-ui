@@ -13,10 +13,11 @@ services:
     ports:
       - 5555:5555
     networks:
-      - selenoid-net
+      - app
 
 networks:
-  selenoid-net:
+  app:
     external: true
+    name: selenoid-net
 
 
