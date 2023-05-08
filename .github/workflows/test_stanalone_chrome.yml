@@ -1,0 +1,31 @@
+name: Standalone chrome
+on:
+  push:
+    branches:
+      - sel-grid
+  workflow_dispatch:
+
+jobs:
+  build:
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout the latest code
+      uses: actions/checkout@v3
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: temurin
+        cache: maven
+
+    - name: start containers
+      run: docker-compose -f "docker-compose-standalone-chrome.yml" up -d --build
+
+    - name: Build with Maven
+      run: 'mvn -B test --file pom.xml -Dgrid-url=http://localhost:4444'
+
+    - name: Stop containers
+      if: always()
+      run: |
+        docker-compose -f "docker-compose-standalone-chrome.yml" down
