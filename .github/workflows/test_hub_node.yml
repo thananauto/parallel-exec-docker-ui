@@ -1,4 +1,4 @@
-name: Standalone chrome
+name: Selenium Grid - Hub and Nodes
 on:
   push:
     branches:
@@ -25,12 +25,12 @@ jobs:
       continue-on-error: true
 
     - name: start chrome container
-      run: docker-compose -f "docker-compose-standalone-chrome.yml" up -d --build
+      run: docker-compose -f "docker-compose-v3-grid.yml" up -d --build
 
     - name: Build with Maven
-      run: 'mvn -B test --file pom.xml -Dgrid-url=http://localhost:4445'
+      run: 'mvn -B test --file pom.xml -Dgrid-url=http://localhost:4444'
 
     - name: Stop the chrome containers
       if: always()
       run: |
-        docker-compose -f "docker-compose-standalone-chrome.yml" down
+        docker-compose -f "docker-compose-v3-grid.yml" down
