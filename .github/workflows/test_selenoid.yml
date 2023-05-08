@@ -1,7 +1,9 @@
-name: Parallel execution - selenoid
+name: Selenoid + Script on host
 
 on:
-  push:
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
