@@ -24,13 +24,13 @@ jobs:
       uses: satackey/action-docker-layer-caching@v0.0.11
       continue-on-error: true
 
-    - name: start chrome container
+    - name: setup Hub and nodes
       run: docker-compose -f "docker-compose-v3-grid.yml" up -d --build
 
     - name: Build with Maven
       run: 'mvn -B test --file pom.xml -Dgrid-url=http://localhost:4444'
 
-    - name: Stop the chrome containers
+    - name: Stop the grid setup
       if: always()
       run: |
         docker-compose -f "docker-compose-v3-grid.yml" down
