@@ -1,0 +1,17 @@
+version: '3.5'
+services:
+  chrome:
+    container_name: chrome
+    image: selenium/standalone-chrome:112.0-20230421
+    shm_size: 2gb
+    ports:
+      - 4445:4444
+      - 7901:7900
+    networks:
+      - myNetwork
+
+
+networks:
+  myNetwork:
+    name: chrome-standalone
+    driver: bridge

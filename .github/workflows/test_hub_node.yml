@@ -1,0 +1,36 @@
+name: Selenium Grid - Hub and Nodes
+on:
+  push:
+    branches:
+      - sel-grid
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout the latest code
+      uses: actions/checkout@v3
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: temurin
+        cache: maven
+
+    - name: Docker cache
+      uses: satackey/action-docker-layer-caching@v0.0.11
+      continue-on-error: true
+
+    - name: setup Hub and nodes
+      run: docker-compose -f "docker-compose-v3-grid.yml" up -d --build
+
+    - name: Build with Maven
+      run: 'mvn -B test --file pom.xml -Dgrid-url=http://localhost:4444'
+
+    - name: Stop the grid setup
+      if: always()
+      run: |
+        docker-compose -f "docker-compose-v3-grid.yml" down

@@ -1,7 +1,7 @@
 name: Selenoid + script on container
 
 on:
-  pull_request:
+  push:
     branches:
       - main
   workflow_dispatch:
@@ -43,7 +43,6 @@ jobs:
       if: always()
       run: |
         docker wait testng-selenoid-ui
-        docker logs testng-selenoid-ui
         docker rm testng-selenoid-ui
         docker-compose -f "docker-compose.yml" down
         docker-compose -f "docker-compose-tests.yml" down
