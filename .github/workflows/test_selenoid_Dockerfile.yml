@@ -34,14 +34,12 @@ jobs:
 
 
     - name: Kick start the test via separate container
-      run: docker-compose -f "docker-compose-tests.yml" up -d --build
+      run: docker-compose -f "docker-compose-tests.yml" up -d --build --remove-orphans
 
     - name: Stop containers
       if: always()
       run: |
         docker wait testng-selenoid-ui
-        docker logs selenoid
-        docker logs testng-selenoid-ui
         docker-compose -f "docker-compose.yml" down
         docker-compose -f "docker-compose-tests.yml" down
 
