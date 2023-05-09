@@ -21,6 +21,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+
     - name: Restore Maven cache
       uses: skjolber/maven-cache-github-action@v1
       continue-on-error: true
