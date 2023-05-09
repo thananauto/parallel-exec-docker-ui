@@ -7,7 +7,7 @@ services:
     restart: "no"
 
   zalenium:
-    image: repo.forge.lmig.com/docker/dosel/zalenium
+    image: dosel/zalenium
     container_name: zalenium
     depends_on:
       - selenium
