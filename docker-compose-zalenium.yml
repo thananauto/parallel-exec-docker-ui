@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  selenium:
+    image: elgalu/selenium
+    command: echo 0
+    restart: "no"
+
+  zalenium:
+    image: repo.forge.lmig.com/docker/dosel/zalenium
+    container_name: zalenium
+    depends_on:
+      - selenium
+    ports:
+      - "4444:4444"
+    restart: unless-stopped
+    tty: true
+    command: ["start", "--desiredContainers", "5", "--maxDockerSeleniumContainers", "10","--sauceLabsEnabled","false","--screenWidth", "1920", "--screenHeight", "1080"]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    privileged: true
