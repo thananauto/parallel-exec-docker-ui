@@ -21,6 +21,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+
     - name: Restore Maven cache
       uses: skjolber/maven-cache-github-action@v1
       continue-on-error: true
@@ -31,9 +32,11 @@ jobs:
       uses: satackey/action-docker-layer-caching@v0.0.11
       continue-on-error: true
 
-    - name: start containers
-      run: docker-compose -f "docker-compose-zalenium.yml" up -d --build
+   # - name: start containers
+    #  run: docker-compose -f "docker-compose-zalenium.yml" up -d --build
 
+    - name: Spin up the zalenium
+        uses: ajinx/zalenium@1.1
 
     - name: Build with Maven
       run: mvn -B test --file pom.xml -Dgrid-url=http://localhost:4444/wd/hub
@@ -44,8 +47,8 @@ jobs:
       with:
         step: save
 
-    - name: Stop containers
-      if: always()
-      run: docker logs zalenium && docker-compose -f "docker-compose-zalenium.yml" down
+    #- name: Stop containers
+    #  if: always()
+    #  run: docker logs zalenium && docker-compose -f "docker-compose-zalenium.yml" down
 
    
