@@ -1,7 +1,7 @@
 # parallel-exec-docker-ui
 This projects demonstrates how to setup the selenium grid different ways with help of docker
 
-### Contents
+### Status of recent workflows
 1. Standalone browsers images - [`docker-compose-standalone-chrome.yml`](docker-compose-standalone-chrome.yml) [![Standalone chrome](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_stanalone_chrome.yml/badge.svg)](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_stanalone_chrome.yml)
 2. Hub and Node setup using docker-compose - [`docker-compose-v3-grid.yml`](docker-compose-v3-grid.yml)[![Selenium Grid - Hub and Nodes](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_hub_node.yml/badge.svg)](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_hub_node.yml)
 3. Selenoid  [`docker-compose.yml`](docker-compose.yml) and [`docker-compose-tests.yml`](docker-compose-tests.yml) [![Selenoid + script on container](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_selenoid_Dockerfile.yml/badge.svg)](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_selenoid_Dockerfile.yml) and [![Selenoid + Script on host](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_selenoid.yml/badge.svg)](https://github.com/thananauto/testng-selenoid-ui/actions/workflows/test_selenoid.yml)
