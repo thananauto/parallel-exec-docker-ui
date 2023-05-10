@@ -36,7 +36,7 @@ jobs:
     #  run: docker-compose -f "docker-compose-zalenium.yml" up -d --build
 
     - name: Spin up the zalenium
-        uses: ajinx/zalenium@1.1
+      uses: ajinx/zalenium@1.1
 
     - name: Build with Maven
       run: mvn -B test --file pom.xml -Dgrid-url=http://localhost:4444/wd/hub
